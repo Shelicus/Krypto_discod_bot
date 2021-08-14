@@ -1,11 +1,12 @@
 # Krypto_discod_bot
 Sendet stündlich die aktuellen Kurse von Bitcoin.de auf Discord
 
-
-Mit diesem Script werden stündlich die aktuellen Kurse auf Discord in ein Channel geschickt und es werden nur die letzten 24 h der KUrse angezeigt.
+# Beschreibung:
+Mit diesem Script werden stündlich die aktuellen Kurse auf Discord in ein Channel geschickt und es werden nur die letzten 24 h der Kurse angezeigt.
 In die Channels darf nicht vom User geschrieben werden oder etwas gelöscht werden, was der Bot geschrieben hat. Derzeit ist Bitcoin, Dogecoin, Ethereum und Litcoin implementiert, durch Kopieren oder löschen der einzelene Teile können Kurse hinzugefügt werden oder entfernt werden. 
 
 
+# Vorbereitung:
 1. Als erstest müssen die Platzhalter durch die API-Keys ersetzt werden. 
    Krypto Key: Von der Bitcoin.de Seite, Discord Bot Key: https://www.youtube.com/watch?v=4TSBD53e5No&list=PLNmsVeXQZj7rI3usLYlWhsjdFJ-MER_pU 
 
