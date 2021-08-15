@@ -18,3 +18,14 @@ In die Channels darf nicht vom User geschrieben werden oder etwas gelöscht werd
 
 5. Jetzt muss @main_bot.py und @Verarbeitung.py auf den Server hochgeladen werden und main_bot.py ausgeführt werden.
    -> @Verarbeitung.py muss im selben Ordner sein wie @main_bot.py
+   
+   
+   
+   
+ #
+   
+ ###############################################################################################
+ 
+ Suchbegriffe:
+
+Discord Bot, Krypto Bot, Deutsch, Deutschland, Bitcoin.de, BTC, Ether, Litecoin, Bot, Discordkryptobot, API Krypto
