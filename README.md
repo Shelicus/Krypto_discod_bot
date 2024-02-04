@@ -4,7 +4,8 @@
 
 ## Beschreibung:
 Mit diesem Skript werden stündlich die aktuellen Kurse auf Discord in ein Channel gesendet und es werden immer nur die letzten 24 h der Kurse angezeigt.
-In die Channels darf nicht vom User geschrieben werden oder etwas gelöscht werden, was der Bot geschrieben hat. Derzeit ist Bitcoin, Dogecoin, Ethereum und Litcoin implementiert. Durch Kopieren oder löschen der einzelnen Teile können Kurse hinzugefügt werden oder entfernt werden.
+In die Channels darf nicht vom User geschrieben werden oder etwas gelöscht werden, was der Bot geschrieben hat. Derzeit ist Bitcoin, Dogecoin, Ethereum und Litcoin implementiert. 
+Wird nicht mehr gewartet und befindet sich in read-only. 
 
 
 
