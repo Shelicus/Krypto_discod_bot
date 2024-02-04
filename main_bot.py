@@ -116,7 +116,7 @@ async def kurs_verarbeitung():
 
                 try:
                     # Kurs Ausgabe alle Stunde
-                    if time_now % 60 == 0 and again == True:
+                    if time_now % 60 == 0 and again:
 
                         neu_anordung(kurs_liste_btc)
                         neu_anordung(kurs_liste_ether)
@@ -147,55 +147,23 @@ async def kurs_verarbeitung():
                             await variable_lite.edit(content=message_lite)
 
 
-                        aktueller_kurs_btc = kurse(API_KEY, 'btceur')
-                        if aktueller_kurs_btc[0] != 'Fail':
-                            counter = 0
-                            async for c in kurs_channel_btc.history():
-                                counter = counter + 1
-                            if counter >= 24:
-                                await kurs_channel_btc.purge(limit=1)
-                            zeit_speicher[0] = zeit_full()
-                            kurs_liste_btc[0] = aktueller_kurs_btc[0]
-                            await kurs_channel_btc.send(f''' Gesamt: {aktueller_kurs_btc[0]} /Gewichtete Kurs von 3h: {aktueller_kurs_btc[1]} /Gewichtete Kurs von 12h: {aktueller_kurs_btc[2]} /Zeit: {zeit_full()}''')
-
-
-                        aktueller_kurs_eth=kurse(API_KEY, 'etheur')
-                        if aktueller_kurs_eth[0] != 'Fail':
-                            counter = 0
-                            async for c in kurs_channel_ether.history():
-                                counter = counter + 1
-                            if counter >= 24:
-                                await kurs_channel_ether.purge(limit=1)
-                            zeit_speicher[0] = zeit_full()
-                            kurs_liste_ether[0] = aktueller_kurs_eth[0]
-                            await kurs_channel_ether.send(f''' Gesamt: {aktueller_kurs_eth[0]} /Gewichtete Kurs von 3h: {aktueller_kurs_eth[1]} /Gewichtete Kurs von 12h: {aktueller_kurs_eth[2]} /Zeit: {zeit_full()}''')
-
-
-                        aktueller_kurs_doge = kurse(API_KEY, 'dogeeur')
-                        kurs_liste_doge[0] = aktueller_kurs_doge
-                        if aktueller_kurs_doge[0] != 'Fail':
-                            counter = 0
-                            async for c in kurs_channel_doge.history():
-                                counter = counter + 1
-                            if counter >= 24:
-                                await kurs_channel_doge.purge(limit=1)
-                            kurs_liste_doge[0] = aktueller_kurs_doge[0]
-                            await kurs_channel_doge.send(f''' Gesamt: {aktueller_kurs_doge[0]} /Gewichtete Kurs von 3h: {aktueller_kurs_doge[1]} /Gewichtete Kurs von 12h: {aktueller_kurs_doge[2]} /Zeit: {zeit_full()}''')
-
-
-                        aktueller_kurs_ltc = kurse(API_KEY, 'ltceur')
-                        kurs_liste_lite[0] = aktueller_kurs_ltc
-                        if aktueller_kurs_ltc[0] != 'Fail':
-                            counter = 0
-                            async for c in kurs_channel_litecoin.history():
-                                counter = counter + 1
-                            if counter >= 24:
-                                await kurs_channel_litecoin.purge(limit=1)
-                            kurs_liste_lite[0] = aktueller_kurs_ltc[0]
-                            await kurs_channel_litecoin.send(f''' Gesamt: {aktueller_kurs_ltc[0]} /Gewichtete Kurs von 3h: {aktueller_kurs_ltc[1]} /Gewichtete Kurs von 12h: {aktueller_kurs_ltc[2]} /Zeit: {zeit_full()}''')
+                        pairs = [['btceur', kurs_liste_btc, kurs_channel_btc], ['etheur', kurs_liste_ether, kurs_channel_ether],
+                                 ['dogeeur',kurs_liste_doge, kurs_channel_doge], ['ltceur', kurs_liste_lite, kurs_channel_litecoin]]
+                        for pair in paris:
+                            ak_kurs = kurse(API_KEY, pair[0])
+                            if ak_kurs[0] != 'Fail':
+                                counter = 0
+                                async for c in pair[2].history():
+                                    counter += 1
+                                if counter >= 24:
+                                    await pair[2].purge(limit=1)
+                                zeit_speicher[0] = zeit_full()
+                                pair[1][0] = ak_kurs[0]
+                                await pair[2].send(
+                                    f''' Gesamt: {ak_kurs[0]} /Gewichtete Kurs von 3h: {ak_kurs[1]} /Gewichtete Kurs von 12h: {ak_kurs[2]} /Zeit: {zeit_full()}''')
 
                         again = False
-                    elif time_now % 60 != 0 and again == False:
+                    elif time_now % 60 != 0 and not again:
                         again = True
 
 
