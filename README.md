@@ -1,110 +1,104 @@
 # Krypto Discord BOT
 
-
-
 ## Beschreibung:
-Mit diesem Skript werden stündlich die aktuellen Kurse auf Discord in ein Channel gesendet und es werden immer nur die letzten 24 h der Kurse angezeigt.
-In die Channels darf nicht vom User geschrieben werden oder etwas gelöscht werden, was der Bot geschrieben hat. Derzeit ist Bitcoin, Dogecoin, Ethereum und Litcoin implementiert. 
-Wird nicht mehr gewartet und befindet sich in read-only. 
-
+Mit diesem Skript werden stündlich die aktuellen Kurse auf Discord in einen Channel gesendet. Es werden immer nur die letzten 24 Stunden der Kurse angezeigt.  
+In den Channels darf nicht vom User geschrieben werden oder etwas gelöscht werden, was der Bot geschrieben hat. Derzeit sind Bitcoin, Dogecoin, Ethereum und Litecoin implementiert.  
 
 
 ## Verzeichnis:
 > **Schnellster Start:** Quick-Start-Vorbereitung
+
 * [Beschreibung](#Beschreibung)
 * [Verzeichnis](#Verzeichnis)
 * [Vorbereitung](#Vorbereitung)
   * [Quick-Start-Vorbereitung](#Quick-Start-Vorbereitung)
   * [Weitere Vorbereitung](#Weitere-Vorbereitung)
 * [Kompatibilität](#Kompatibilität)
-  * [Client Betriebsysteme](#Client-Betriebsysteme)
-  * [Server Betriebsysteme](#Server-Betriebsysteme)
-  * [Komiler Version](#Kompiler-Version)
+  * [Client-Betriebssysteme](#Client-Betriebssysteme)
+  * [Server-Betriebssysteme](#Server-Betriebssysteme)
+  * [Compiler-Version](#Compiler-Version)
   * [Verwendete Bibliotheken](#Verwendete-Bibliotheken)
-* [Licenze](#Licenze)
+* [Lizenz](#Lizenz)
 
 ## Vorbereitung:
 
 ### Quick-Start-Vorbereitung:
 1. Erstellung des Bots auf Discord
-2. Bot auf Server mit Admin rechten einladen 
-3. Als erstest müssen die Platzhalter durch die API-Keys ersetzt werden 
+2. Bot auf Server mit Administratorrechten einladen
+3. Als erstes müssen die Platzhalter durch die API-Keys ersetzt werden  
    [Krypto Key](Bitcoin.de), [Discord Bot Key](https://www.youtube.com/watch?v=4TSBD53e5No&list=PLNmsVeXQZj7rI3usLYlWhsjdFJ-MER_pU)
-4. Im nächsten Schritt müssen die Channels auf dem Server erstellt werden und für jede einzelne Kryptowährung die Channel ID im Code eingefügt werden
-5. Danach kann durch einmaliges laufen mit Platzhalter.py die Messages in die Channels versendet werden
-6. Die Messages können jetzt mit ihrer ID in den Code Verarbeitung.py eingesetzt werden.
-7. Jetzt muss main_bot.py und Verarbeitung.py auf den Server im selben Ordner hochgeladen werden und main_bot.py ausgeführt werden.
-   > Verarbeitung.py muss im selben Ordner sein wie main_bot.py!
-> Ab hier kein Quick-Vorbereitung mehr!
+4. Im nächsten Schritt müssen die Channels auf dem Server erstellt werden. Für jede einzelne Kryptowährung muss die Channel-ID im Code eingefügt werden
+5. Danach kann durch einmaliges Ausführen von `Platzhalter.py` die Nachrichten in die Channels gesendet werden
+6. Die Nachrichten können jetzt mit ihrer ID in den Code `Verarbeitung.py` integriert werden
+7. Nun müssen `main_bot.py` und `Verarbeitung.py` auf den Server im selben Ordner hochgeladen werden, und `main_bot.py` muss ausgeführt werden.  
+   > `Verarbeitung.py` muss im selben Ordner wie `main_bot.py` sein!
 
-### Weitere Vorbereitung: 
-6. Hinzufügen oder Entfernen von Kryptowährungen, indem Teile Kopiert werden oder entfernt werden -> Oder Ersetzung im Link die Kryptowährung
+> Ab hier folgt keine Quick-Start-Vorbereitung mehr!
+
+### Weitere Vorbereitung:
+6. Hinzufügen oder Entfernen von Kryptowährungen, indem Teile des Codes kopiert oder entfernt werden – oder die Kryptowährung im Link ersetzt wird.
 
 ## Kompatibilität:
 
-### Client Betriebsysteme:
-|Betriebsystem|Version|Test Ergebnis|
-|:---:|:---:|:---:|
-|Windows|Windows 10|![funk](https://img.shields.io/badge/checks-passing-green)|
-|Windows|Windows 11|![funk](https://img.shields.io/badge/checks-passing-green)|
-|Arch Linux|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|CentOS|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|Debian|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|Elementary OS|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|Fedora|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|Gentoo Linux|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|Kali Linux|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|macOS Mojave|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|macOS High Sierra|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|macOS Sierra|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|OS X El Capitan|aktuelleste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
+### Client-Betriebssysteme:
+| Betriebssystem | Version                | Test-Ergebnis    |
+|:--------------:|:----------------------:|:----------------:|
+| Windows        | Windows 10             | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| Windows        | Windows 11             | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| Arch Linux     | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| CentOS         | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| Debian         | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| Elementary OS  | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| Fedora         | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| Gentoo Linux   | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| Kali Linux     | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| macOS Mojave   | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| macOS High Sierra | neueste Version      | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| macOS Sierra   | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| OS X El Capitan | neueste Version       | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
 
-> Wurde getestet: ![funk](https://img.shields.io/badge/checks-passing-green) | Wurde noch nicht getestet: ![funk_n](https://img.shields.io/badge/checks-not%20tested-red)
+> Getestet: ![funkt](https://img.shields.io/badge/checks-passing-green) | Noch nicht getestet: ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red)
 
-#
-### Server Betriebsysteme:
-|Betriebsystem|Version|Test Ergebnis|
-|:---:|:---:|:---:|
-|Ubuntu|aktuellste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-|Debian|aktuellste Version|![funk](https://img.shields.io/badge/checks-passing-green)|
-|Windows Server| aktuellste Version|![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
+### Server-Betriebssysteme:
+| Betriebssystem | Version                | Test-Ergebnis    |
+|:--------------:|:----------------------:|:----------------:|
+| Ubuntu         | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
+| Debian         | neueste Version        | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| Windows Server | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
 
-> Wurde getestet: ![funk](https://img.shields.io/badge/checks-passing-green) | Wurde noch nicht getestet: ![funk_n](https://img.shields.io/badge/checks-not%20tested-red)
+> Getestet: ![funkt](https://img.shields.io/badge/checks-passing-green) | Noch nicht getestet: ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red)
 
-#
+### Compiler-Version:
+| Compiler       | Version                | Test-Ergebnis    |
+|:--------------:|:----------------------:|:----------------:|
+| Python         | 3.9                    | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| Python         | 3.10                   | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| Python         | neueste Version        | ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red) |
 
-### Kompiler Version:
-|Kompiler|Version|Test Ergebnis|
-|:---:|:---:|:---:|
-|Python| 3.9 |![funk](https://img.shields.io/badge/checks-passing-green)|
-|Python| 3.10 |![funk](https://img.shields.io/badge/checks-passing-green)|
-|Python| aktuellste Version |![funk_n](https://img.shields.io/badge/checks-not%20tested-red)|
-
-> Wurde getestet: ![funk](https://img.shields.io/badge/checks-passing-green) | Wurde noch nicht getestet: ![funk_n](https://img.shields.io/badge/checks-not%20tested-red)
+> Getestet: ![funkt](https://img.shields.io/badge/checks-passing-green) | Noch nicht getestet: ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red)
 
 ### Verwendete Bibliotheken:
-|Bibliothek|Version|Test Ergebnis|
-|:---:|:---:|:---:|
-|datetime| aktuellste Version |![funk](https://img.shields.io/badge/checks-passing-green)|
-|requests| aktuellste Version |![funk](https://img.shields.io/badge/checks-passing-green)|
-|pycord| aktuellste Version |![funk](https://img.shields.io/badge/checks-passing-green)|
-|asyncio| aktuellste Version |![funk](https://img.shields.io/badge/checks-passing-green)|
+| Bibliothek     | Version                | Test-Ergebnis    |
+|:--------------:|:----------------------:|:----------------:|
+| datetime       | neueste Version        | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| requests       | neueste Version        | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| pycord         | neueste Version        | ![funkt](https://img.shields.io/badge/checks-passing-green) |
+| asyncio        | neueste Version        | ![funkt](https://img.shields.io/badge/checks-passing-green) |
 
-> Wurde getestet: ![funk](https://img.shields.io/badge/checks-passing-green) | Wurde noch nicht getestet: ![funk_n](https://img.shields.io/badge/checks-not%20tested-red)
+> Getestet: ![funkt](https://img.shields.io/badge/checks-passing-green) | Noch nicht getestet: ![nicht getestet](https://img.shields.io/badge/checks-not%20tested-red)
 
-## Licenze:
+## Lizenz:
 
-Die Lizenz zur weiter Verwendung dieses Projektes, wird durch das **Creative Common** Model angegeben. 
-Bei Ablehnung jeglicher Verwendung durch meinerseits mit den Piktogrammen oder Sie möchten das Projekt in einer Form verwenden, die nicht hier genannt wurde, muss vor 
-der Benutzung des Projektes die Zustimmung eingeholt werden.
+Die Lizenz zur weiteren Verwendung dieses Projektes wird durch das **Creative Commons**-Modell geregelt.  
+Falls du die Verwendung in einer Weise planst, die nicht durch die hier angegebenen Lizenzen abgedeckt ist oder du eine andere Verwendung wünschst, musst du vor der Nutzung des Projektes meine Zustimmung einholen.
 
-|Verwendet|Piktogramm|Bezeichnung|Verlinkung|
-|:---:|:---:|:---:|:---:|
-|:x:|![Licenze_eins](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png)|Namensnennung 4.0 International|[Details](https://creativecommons.org/licenses/by/4.0/legalcode.de)|
-|:x:|![Licenze_zwei](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png)|Namensnennung-Share Alike 4.0 International|[Details](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de)|
-|:x:|![Licenze_drei](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nd.png)|Namensnennung-Keine Bearbeitungen 4.0 International|[Details](https://creativecommons.org/licenses/by-nd/4.0/legalcode.de)|
-|:x:|![Licenze_vier](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.eu.png)|Namensnennung-Nicht kommerziell 4.0 International|[Details](https://creativecommons.org/licenses/by-nc/4.0/legalcode.de)|
-|:heavy_check_mark:|![Licenze_fünf](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.eu.png)|	Namensnennung-Nicht kommerziell-Share Alike 4.0 International|[Details](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de)|
-|:x:|![Licenze_sex](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.eu.png)|	Namensnennung-Nicht kommerziell-Keine Bearbeitungen 4.0 International|[Details](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.de)|
+| Verwendet | Piktogramm | Bezeichnung | Verlinkung |
+|:--------:|:----------:|:-----------:|:---------:|
+| :x:      | ![Lizenz_eins](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png) | Namensnennung 4.0 International | [Details](https://creativecommons.org/licenses/by/4.0/legalcode.de) |
+| :x:      | ![Lizenz_zwei](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png) | Namensnennung-ShareAlike 4.0 International | [Details](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de) |
+| :x:      | ![Lizenz_drei](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nd.png) | Namensnennung-Keine Bearbeitungen 4.0 International | [Details](https://creativecommons.org/licenses/by-nd/4.0/legalcode.de) |
+| :x:      | ![Lizenz_vier](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.eu.png) | Namensnennung-Nicht kommerziell 4.0 International | [Details](https://creativecommons.org/licenses/by-nc/4.0/legalcode.de) |
+| :heavy_check_mark: | ![Lizenz_fünf](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.eu.png) | Namensnennung-Nicht kommerziell-ShareAlike 4.0 International | [Details](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de) |
+| :x:      | ![Lizenz_sechs](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-nd.eu.png) | Namensnennung-Nicht kommerziell-Keine Bearbeitungen 4.0 International | [Details](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.de) |
 
-> Verwendete Licenze: :heavy_check_mark: Nicht verwendete Licenze: :x:
+> Verwendete Lizenz: :heavy_check_mark: | Nicht verwendete Lizenzen: :x:
